@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include"stack.h"
 
-/*void menu();	    
+void menu();	    
 	    
 int main ()
 {
@@ -65,7 +65,7 @@ void menu()
 	printf( " Enter 3 to PEEK in the STACK \n" );
 	printf( " Enter 4 to exit from the STACK\n" );
 	
-}*/  
+}  
 
 void push( STACK **head , int element )
 {

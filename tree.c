@@ -32,8 +32,6 @@ void print_paths( node * );
 void print_stack( STACK * );
 node * delete_node( node ** , int );
 void del_special( node ** );
-//void tree_to_list( node ** , node ** );
-//void join( node ** , node ** );
 void display_link( node * );
 void avl_insert( node ** , int );
 void right_rotation( node ** );

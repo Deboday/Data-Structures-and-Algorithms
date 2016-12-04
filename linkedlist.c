@@ -1,5 +1,32 @@
 #include<stdio.h>
-#include<stdlib.h>	
+#include<stdlib.h>
+
+#define true 1
+#define false 0
+
+typedef int boolean;
+
+typedef struct link {
+			int element;
+			struct link *next;
+		    } node;
+		    
+		    
+void menu();
+void insert_end( node ** , int );
+void delete_end( node ** );
+void delete( node ** , int );
+void insert_begin( node ** , int );
+void delete_begin( node ** );
+void display( node * );
+void sort_entry( node ** , int );
+boolean is_empty( node ** );
+void merge_sort( node ** ); 
+void mid_split( node ** , node ** , node * );
+void sorted_merge( node ** , node *, node * );
+int length( node ** );
+void new_node( node ** );
+void recursive_reversing( node ** );				
 		
 int main ()
 {

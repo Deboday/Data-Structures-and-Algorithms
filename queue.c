@@ -1,6 +1,19 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include"queue.h"
+#define true 1
+#define false 2
+
+typedef int boolean;
+
+typedef struct node1 {
+			int info;
+			struct node1 *next;
+	   	    } QUEUE;
+	   	    
+
+void enqueue ( QUEUE ** , QUEUE ** , int );
+int dequeue( QUEUE ** , QUEUE ** );
+boolean is_empty( QUEUE * );
+int peek( QUEUE * );
+void empty( QUEUE ** , QUEUE ** );
 
 void menu();	    
 	    
