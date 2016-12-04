@@ -1,8 +1,7 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include"linkedlist.h"		
+#include<stdlib.h>	
 		
-/*int main ()
+int main ()
 {
 	node *head;
 	head = NULL;
@@ -95,7 +94,7 @@ void menu()
 	printf( " Enter 9 to reverse the Linked List \n" );
 	printf( " Enter 10 to exit from the Linked List \n" );
 	
-}*/
+}
 
 void insert_end( node **head , int info )
 {
