@@ -69,7 +69,7 @@ int main()
 
 int optimal_solution( int arr[][N+1] , int par[][N+1] , int col[] , int i , int j )
 {
-	int max = 0 , max1 = 0;
+	int max = 0;
 	if( i == j )
 	{
 		arr[i][i] = 0;
@@ -80,12 +80,10 @@ int optimal_solution( int arr[][N+1] , int par[][N+1] , int col[] , int i , int 
 		
 	for( int k = i ; k < j ; k++ )
 	{
-		max = optimal_solution( arr , par , col , i , k );
-		max1 = optimal_solution( arr , par , col , k + 1 , j );
-		
-		if( arr[i][j] > max + max1 + col[i-1]*col[k]*col[j] )
+		max = optimal_solution( arr , par , col , i , k ) + optimal_solution( arr , par , col , k + 1 , j );		
+		if( arr[i][j] > max + col[i-1]*col[k]*col[j] )
 		{
-			arr[i][j] = max + max1 + col[i-1]*col[k]*col[j];
+			arr[i][j] = max + col[i-1]*col[k]*col[j];
 			par[i][j] = k;
 		}
 	}
