@@ -63,10 +63,11 @@ void mst_kruskal( Edge arr[] , int i , int n )//O(ELOG(V))
 		return;
 	}
 	printf( "\nThe Edges in the Minimum Spanning Tree are :- \n" );
+	j = j - 1;
 	while( j >= 0 )
 	{
-		j--;
 		printf( " Vertex %d to Vertex %d of length %d \n" , mst[j].start_vertex , mst[j].end_vertex , mst[j].length );
+		j--;
 	}
 }
 
