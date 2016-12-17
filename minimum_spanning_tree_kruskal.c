@@ -46,6 +46,7 @@ void mst_kruskal( Edge arr[] , int i , int n )//O(ELOG(V))
 	int ver[n];
 	Edge mst[n-1];
 	make_set( ver , n );
+	qsort( arr , n , sizeof(arr[0]) , cmpfnc );
 	int k = 0 , j = 0;
 	while( k < i )
 	{
