@@ -72,13 +72,13 @@ int main()
 	return -1;
 }
 
-void mst_prims( Graph *head , int r , int n )
+void mst_prims( Graph *head , int r , int n )//O(ELOG(V)) = O(VLOG(V) + ELOG(V) ) = O(ELOG(V))
 {
 	QUEUE out;
 	out.length = -1;
 	Object mst[n];
 	int visited[n];
-	for( int i = 0 ; i < n ; i++ )
+	for( int i = 0 ; i < n ; i++ )//O(VLOG(V))
 	{
 		if( i != r )
 			min_heap_insert( &out , i , INT_MAX , visited );
@@ -86,16 +86,16 @@ void mst_prims( Graph *head , int r , int n )
 			min_heap_insert( &out , i , 0 , visited );
 	}
 	int i = 0;
-	while( out.length != -1 )
+	while( out.length != -1 )//O(V)
 	{
-		mst[i] = min_heap_extract( &out , visited );
+		mst[i] = min_heap_extract( &out , visited );//O(LOG(V))
 		visited[mst[i].n] = -1;
-		for( Edge *j = head->arr[mst[i].n].next ; j != NULL ; j = j->next )
+		for( Edge *j = head->arr[mst[i].n].next ; j != NULL ; j = j->next )//O(E)
 		{
-			if( visited[j->vertex] != -1 && j->weight < out.arr[visited[j->vertex]].key )
+			if( visited[j->vertex] != -1 && j->weight < out.arr[visited[j->vertex]].key )//O(1)
 			{
 				head->arr[j->vertex].parent = mst[i].n;
-				decrease_key( &out , visited[j->vertex] , j->weight , visited );
+				decrease_key( &out , visited[j->vertex] , j->weight , visited );//O(LOG(V))
 			}
 		}
 		i++;
