@@ -68,6 +68,7 @@ int main()
 		}
 	}
 	dag_shortest_path( &head , n );	
+	return -1;
 }
 
 void push( Stack **head , int value )
