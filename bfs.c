@@ -72,7 +72,8 @@ int main()
 		printf(" Shortest path between %d and %d is %d \n" , i , a , head.arr[i].distance );
 		print_path( head , i , a );
 		printf("\n");
-	}	
+	}
+	return -1;
 }
 
 void enqueue( Queue **head , int value )
