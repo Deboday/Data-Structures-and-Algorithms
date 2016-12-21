@@ -74,7 +74,8 @@ int main()
 		printf("  The path is given below \n" );
 		print_path( head , i , a );
 		printf("\n");
-	}	
+	}
+	return -1;
 }
 
 void push( Stack **head , int value )
